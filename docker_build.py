@@ -56,7 +56,7 @@ def build_one_image(branch_name):
 def get_predecessor_branch(current_branch, all_branches):
     last = "upstream/" + current_branch
     if current_branch == "cjt":
-        last = "upstream/master"
+        last = "cjt"
     for branch in all_branches:
         if branch == current_branch:
 	    return last
