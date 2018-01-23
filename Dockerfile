@@ -1,3 +1,3 @@
-FROM cloudbees/cloudbees-jenkins-team:2.89.1.7
+FROM cloudbees/cloudbees-jenkins-team:2.89.3.4
 
 LABEL maintainer="mark.earl.waite@gmail.com"
