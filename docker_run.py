@@ -113,8 +113,6 @@ def docker_execute(docker_tag, http_port=8080, jnlp_port=50000, ssh_port=18022, 
                              "-Djava.awt.headless=true",
                              "-Xdebug",
                              "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5678",
-                             "-XX:MaxRAMFraction=1",
-                             "-XX:+UseCGroupMemoryLimitForHeap",
                             ])
     docker_command.extend([
                        "--env", 'JAVA_OPTS="' + java_opts + '"',
