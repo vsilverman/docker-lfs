@@ -94,7 +94,7 @@ def docker_execute(docker_tag, http_port=8080, jnlp_port=50000, ssh_port=18022, 
                        "--publish", str(http_port) + ":8080",
                        "--publish", str(jnlp_port) + ":50000",
                        "--publish", str(ssh_port)  + ":18022",
-                       "--publish", str(debug_port)  + ":5678",
+                       # "--publish", str(debug_port)  + ":5678",
                      ]
     if jenkins_home_volume_map != None and http_port == 8080:
         docker_command.extend(["--volume", jenkins_home_volume_map])
