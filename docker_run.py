@@ -114,6 +114,7 @@ def docker_execute(docker_tag, http_port=8080, jnlp_port=50000, ssh_port=18022, 
                              "-Djava.awt.headless=true",
                              "-Xdebug",
                              "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5678",
+                             "-Dhudson.model.DownloadService.noSignatureCheck=true",
                             ])
     docker_command.extend([
                        "--env", 'JAVA_OPTS="' + java_opts + '"',
@@ -123,6 +124,7 @@ def docker_execute(docker_tag, http_port=8080, jnlp_port=50000, ssh_port=18022, 
                        "--env", "TZ=America/Boise",
                        "--env", "user.timezone=America/Denver",
                        "--env", "DOCKER_FIX=refer-to-docker-issues-14203-for-description",
+                       "--env", "hudson.model.DownloadService.noSignatureCheck=true",
                        "-t", docker_tag,
                      ])
     print(" ".join(map(str, docker_command)))
