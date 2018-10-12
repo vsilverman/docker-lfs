@@ -30,4 +30,6 @@ USER jenkins
 # `/usr/share/jenkins/ref/` contains all reference configuration we want
 # to set on a fresh new installation. Use it to bundle additional plugins
 # or config file with your custom jenkins Docker image.
-ADD ref /usr/share/jenkins/ref/
+# ADD ref /usr/share/jenkins/ref/
+
+ENV CASC_JENKINS_CONFIG ${JENKINS_HOME}/jenkins.yaml
