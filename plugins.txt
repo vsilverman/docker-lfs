@@ -165,7 +165,6 @@ token-macro:latest
 tool-labels-plugin:latest
 trilead-api:latest
 variant:latest
-versioncolumn:latest
 view-job-filters:latest
 warnings:latest
 warnings-ng:latest
