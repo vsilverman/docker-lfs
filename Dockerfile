@@ -8,9 +8,7 @@ RUN apt-get clean && apt-get update && apt-get install -y \
   build-essential \
   fontconfig \
   gcc-multilib \
-  git \
   git-lfs \
-  gnupg \
   graphviz \
   locales \
   lsb-release \
