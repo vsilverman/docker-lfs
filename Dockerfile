@@ -28,6 +28,7 @@ USER jenkins
 # `/usr/share/jenkins/ref/` contains all reference configuration we want
 # to set on a fresh new installation. Use it to bundle additional plugins
 # or config file with your custom jenkins Docker image.
+RUN mkdir -p /usr/share/jenkins/ref/init.groovy.d
 
 ADD ref /usr/share/jenkins/ref/
 
