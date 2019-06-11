@@ -4,6 +4,9 @@ LABEL maintainer="mark.earl.waite@gmail.com"
 
 USER root
 
+# For Git LFS
+RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
+
 RUN apt-get clean && apt-get update && apt-get dist-upgrade -y && apt-get install -y \
   build-essential \
   fontconfig \
@@ -15,7 +18,7 @@ RUN apt-get clean && apt-get update && apt-get dist-upgrade -y && apt-get instal
   make \
   procps \
   wget \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* && git lfs install
 
 # Enable en_US.UTF-8 locale and generate
 RUN sed -i 's/. en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen \
@@ -31,3 +34,5 @@ USER jenkins
 ADD ref /usr/share/jenkins/ref/
 
 ENV CASC_JENKINS_CONFIG ${JENKINS_HOME}/jenkins.yaml
+
+RUN git lfs install
