@@ -12,7 +12,6 @@ RUN apt-get clean && apt-get update && apt-get dist-upgrade -y && apt-get instal
   fontconfig \
   gcc-multilib \
   git-lfs \
-  graphviz \
   locales \
   lsb-release \
   make \
