@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.176.1-jdk11
+FROM jenkins/jenkins:2.176.2-jdk11
 
 LABEL maintainer="mark.earl.waite@gmail.com"
 
@@ -12,7 +12,6 @@ RUN apt-get clean && apt-get update && apt-get dist-upgrade -y && apt-get instal
   fontconfig \
   gcc-multilib \
   git-lfs \
-  graphviz \
   locales \
   lsb-release \
   make \
