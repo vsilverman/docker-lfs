@@ -63,6 +63,7 @@ docker-workflow:latest
 durable-task:latest
 elastic-axis:latest
 email-ext:latest
+external-monitor-job:latest
 favorite:latest
 findbugs:latest
 git-bisect:latest
@@ -170,6 +171,7 @@ variant:latest
 view-job-filters:latest
 warnings:latest
 warnings-ng:latest
+windows-slaves:latest
 workflow-aggregator:latest
 workflow-api:latest
 workflow-basic-steps:latest
