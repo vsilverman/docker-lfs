@@ -2,6 +2,8 @@ FROM jenkins/jenkins:2.176.2-jdk11
 
 LABEL maintainer="mark.earl.waite@gmail.com"
 
+ARG REF=/usr/share/jenkins/ref # Needed until LTS image upgraded to include REF as an arg
+
 USER root
 
 # For Git LFS
