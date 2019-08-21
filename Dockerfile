@@ -2,6 +2,9 @@ FROM jenkins/jenkins:2.176.2-jdk11
 
 LABEL maintainer="mark.earl.waite@gmail.com"
 
+# Needed until LTS image upgraded to include REF as an arg
+ARG REF=/usr/share/jenkins/ref
+
 USER root
 
 # For Git LFS
@@ -27,10 +30,10 @@ RUN sed -i 's/. en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen \
 
 USER jenkins
 
-# `/usr/share/jenkins/ref/` contains all reference configuration we want
+# $REF (defaults to `/usr/share/jenkins/ref/`) contains all reference configuration we want
 # to set on a fresh new installation. Use it to bundle additional plugins
 # or config file with your custom jenkins Docker image.
-ADD ref /usr/share/jenkins/ref/
+ADD ref ${REF}/
 
 ENV CASC_JENKINS_CONFIG ${JENKINS_HOME}/jenkins.yaml
 
