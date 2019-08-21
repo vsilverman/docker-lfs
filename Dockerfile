@@ -30,11 +30,6 @@ RUN sed -i 's/. en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen \
 
 USER jenkins
 
-# $REF (defaults to `/usr/share/jenkins/ref/`) contains all reference configuration we want
-# to set on a fresh new installation. Use it to bundle additional plugins
-# or config file with your custom jenkins Docker image.
-ADD ref ${REF}/
-
 ENV CASC_JENKINS_CONFIG ${JENKINS_HOME}/jenkins.yaml
 
 RUN git lfs install
