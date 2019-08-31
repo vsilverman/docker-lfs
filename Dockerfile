@@ -35,8 +35,6 @@ USER jenkins
 # or config file with your custom jenkins Docker image.
 RUN mkdir -p ${REF}/init.groovy.d
 
-# ADD ref /usr/share/jenkins/ref/
-
 ENV CASC_JENKINS_CONFIG ${JENKINS_HOME}/jenkins.yaml
 
 RUN git lfs install
