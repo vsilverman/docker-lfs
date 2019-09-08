@@ -1,4 +1,5 @@
 ace-editor:latest
+adoptopenjdk:latest
 analysis-collector:latest
 analysis-core:latest
 analysis-model-api:latest
@@ -66,7 +67,6 @@ elastic-axis:latest
 email-ext:latest
 external-monitor-job:latest
 favorite:latest
-findbugs:latest
 forensics-api:latest
 git-bisect:latest
 git-client:3.0.0-beta8
@@ -120,7 +120,6 @@ maven-plugin
 mercurial:latest
 metrics:latest
 momentjs:latest
-monitoring:latest
 multi-branch-project-plugin:latest
 multiple-scms:latest
 pam-auth
