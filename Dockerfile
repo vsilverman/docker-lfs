@@ -2,25 +2,17 @@ FROM jenkins/jenkins:2.176.3-jdk11
 
 LABEL maintainer="mark.earl.waite@gmail.com"
 
-# Needed until LTS image upgraded to include REF as an arg
-ARG REF=/usr/share/jenkins/ref
-
 USER root
 
-# For Git LFS
-RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
-
-RUN apt-get clean && apt-get update && apt-get dist-upgrade -y && apt-get install -y \
-  build-essential \
-  fontconfig \
-  gcc-multilib \
-  git-lfs \
+RUN apt-get update && apt-get dist-upgrade -y && apt-get install -y \
+  apt-transport-https \
+  ca-certificates \
+  curl \
   locales \
-  lsb-release \
-  make \
-  procps \
-  wget \
-  && rm -rf /var/lib/apt/lists/* && git lfs install
+  wget
+
+# For Git LFS
+RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && apt-get install -y git-lfs && git lfs install
 
 # Enable en_US.UTF-8 locale and generate
 RUN sed -i 's/. en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen \
@@ -30,12 +22,7 @@ RUN sed -i 's/. en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen \
 
 USER jenkins
 
-# $REF (defaults to `/usr/share/jenkins/ref/`) contains all reference configuration we want
-# to set on a fresh new installation. Use it to bundle additional plugins
-# or config file with your custom jenkins Docker image.
-RUN mkdir -p ${REF}/init.groovy.d
-
-ADD ref /usr/share/jenkins/ref/
+COPY ref ${REF}
 
 ENV CASC_JENKINS_CONFIG ${JENKINS_HOME}/jenkins.yaml
 
