@@ -2,6 +2,9 @@ FROM jenkins/jenkins:2.176.3-jdk11
 
 LABEL maintainer="mark.earl.waite@gmail.com"
 
+# Needed until LTS image upgraded to include REF as an arg
+ARG REF=/usr/share/jenkins/ref
+
 USER root
 
 RUN apt-get clean && apt-get update && apt-get dist-upgrade -y && apt-get install -y \
