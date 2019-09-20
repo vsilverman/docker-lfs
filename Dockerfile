@@ -22,7 +22,7 @@ RUN sed -i 's/. en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen \
 
 USER jenkins
 
-COPY ref ${REF}
+# COPY ref ${REF}
 
 ENV CASC_JENKINS_CONFIG ${JENKINS_HOME}/jenkins.yaml
 
