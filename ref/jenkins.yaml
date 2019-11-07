@@ -257,15 +257,8 @@ tool:
       - installSource:
           installers:
           - zip:
-              subdir: "apache-ant-1.10.5"
-              url: "https://home.markwaite.net/~mwaite/ant/apache-ant-1.10.5-bin.zip"
-    - name: "ant-latest-java6"
-      properties:
-      - installSource:
-          installers:
-          - zip:
-              subdir: "apache-ant-1.9.13"
-              url: "https://home.markwaite.net/~mwaite/ant/apache-ant-1.9.13-bin.zip"
+              subdir: "apache-ant-1.10.7"
+              url: "https://home.markwaite.net/~mwaite/ant/apache-ant-1.10.7-bin.zip"
   git:
     installations:
     - home: "git"
@@ -277,8 +270,8 @@ tool:
           installers:
           - zip:
               label: "windows && 64bit"
-              subdir: "git-2.24.0\\bin\\git.exe"
-              url: "https://home.markwaite.net/~mwaite/git/git-2.24.0.zip"
+              subdir: "git-2.24.0.2\\bin\\git.exe"
+              url: "https://home.markwaite.net/~mwaite/git/git-2.24.0.2.zip"
           - zip:
               label: "windows && 32bit"
               subdir: "git-2.16.2-32\\bin\\git.exe"
@@ -364,13 +357,6 @@ tool:
           - zip:
               subdir: "apache-maven-3.6.2"
               url: "https://home.markwaite.net/~mwaite/maven/apache-maven-3.6.2-bin.zip"
-    - name: "maven-latest-java6"
-      properties:
-      - installSource:
-          installers:
-          - zip:
-              subdir: "apache-maven-3.2.5"
-              url: "https://home.markwaite.net/~mwaite/maven/apache-maven-3.2.5-bin.zip"
     - name: "mvn"
       properties:
       - installSource:
