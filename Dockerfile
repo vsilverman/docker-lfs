@@ -5,6 +5,11 @@ LABEL maintainer="mark.earl.waite@gmail.com"
 # Avoid JENKINS-59569 - git LFS 2.7.1 fails clone with reference repository
 RUN apt-get update && apt-get upgrade -y && apt-get install -y git curl apt-transport-https ca-certificates locales wget && curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && apt-get install -y git-lfs && git lfs install && rm -rf /var/lib/apt/lists/*
 
+# Need locale to assure UTF-8 files can be written to file system
+RUN echo en_US.UTF-8 UTF-8 >> /etc/locale.gen && locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+
 ARG user=jenkins
 ARG group=jenkins
 ARG uid=1000
