@@ -58,13 +58,14 @@ RUN curl -fsSL https://github.com/krallin/tini/releases/download/${TINI_VERSION}
 
 # jenkins version being bundled in this docker image
 ARG JENKINS_VERSION
-ENV JENKINS_VERSION ${JENKINS_VERSION:-2.204.2}
+ENV JENKINS_VERSION ${JENKINS_VERSION:-2.204.3}
 
 # jenkins.war checksum, download will be validated using it
-ARG JENKINS_SHA=4a90c54c065c8d297f7141174e0b04995f8e28d1ea41332bcc268af19f7371c7
+ARG JENKINS_SHA=1b17fa9aff48e5680e9d63e146f6e983a5b9d2cb7a782fbe32db5eb1da3f72ca
 
 # Can be used to customize where jenkins.war get downloaded from
-ARG JENKINS_URL=https://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/${JENKINS_VERSION}/jenkins-war-${JENKINS_VERSION}.war
+# ARG JENKINS_URL=https://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/${JENKINS_VERSION}/jenkins-war-${JENKINS_VERSION}.war
+ARG JENKINS_URL=http://mirrors.jenkins-ci.org/war-stable-rc/${JENKINS_VERSION}/jenkins.war
 
 # could use ADD but this one does not check Last-Modified header neither does it allow to control checksum
 # see https://github.com/docker/docker/issues/8331
