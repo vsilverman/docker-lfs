@@ -102,4 +102,5 @@ COPY install-plugins.sh /usr/local/bin/install-plugins.sh
 
 ENV CASC_JENKINS_CONFIG ${JENKINS_HOME}/jenkins.yaml
 
+# Initialize git lfs for jenkins user
 RUN git lfs install
